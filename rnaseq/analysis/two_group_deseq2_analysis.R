@@ -110,7 +110,7 @@ main <- function() {
     register(MulticoreParam(cpu_cores))
 
     # load raw cound data from csv and initialize DESeq data instance
-    deseq_data <- init_deseq_data(counts_df_from_csv(raw_counts_csv))
+    deseq_data <- init_deseq_data(counts_df_from_csv(raw_counts_csv), counts_df, group_A, group_B, n_A, n_B)
 
     # perform differential expression analysis
     deseq_data <- DESeq(deseq_data, parallel = TRUE)
